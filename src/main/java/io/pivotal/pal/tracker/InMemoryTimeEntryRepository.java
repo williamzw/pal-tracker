@@ -12,9 +12,9 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
         return timeEntry;
     }
 
-    public TimeEntry find(long id) {
+    public TimeEntry find(Long id) {
          for(TimeEntry t : list){
-             if(t.getId() == id)
+             if(t.getId() == (long)id)
                  return t;
          }
          return null;
@@ -25,9 +25,9 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
         return list;
     }
 
-    public TimeEntry update(long id, TimeEntry timeEntry) {
+    public TimeEntry update(Long id, TimeEntry timeEntry) {
         for(TimeEntry t : list){
-            if(t.getId()==id){
+            if(t.getId()== (long)id){
                 t.setDate(timeEntry.getDate());
                 t.setHours(timeEntry.getHours());
                 t.setProjectId(timeEntry.getProjectId());
@@ -38,9 +38,9 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
         return null;
     }
 
-    public void delete(long id) {
+    public void delete(Long id) {
         for(int i = 0; i < list.size();i++){
-            if(list.get(i).getId()==id){
+            if(list.get(i).getId()== (long) id){
                 list.remove(i);
             }
         }
