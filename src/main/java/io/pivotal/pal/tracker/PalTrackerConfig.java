@@ -8,10 +8,7 @@ import javax.sql.DataSource;
 
 @Configuration
 public class PalTrackerConfig {
-    @Bean
-    public TimeEntryRepository  timeEntryRepository(){
-        return new InMemoryTimeEntryRepository();
-    }
+
 
     @Bean
     public JdbcTimeEntryRepository jdbcTimeEntryRepository(DataSource dataSource){
